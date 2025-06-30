@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Toko Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="welcome">
+    <h1>Selamat Datang di Toko Panel</h1>
+    <button onclick="showProducts()">Lihat Produk</button>
+  </div>
+
+  <div id="products" class="hidden">
+    <h2>Panel Public</h2>
+    <div id="publicList"></div>
+    <h2>Panel Private</h2>
+    <div id="privateList"></div>
+    <button id="continueBtn" class="hidden" onclick="showPaymentForm()">Checkout</button>
+  </div>
+
+  <div id="paymentForm" class="hidden">
+    <h2>Form Pembayaran</h2>
+    <p>Paket: <span id="summaryPackage"></span></p>
+    <p>Harga: Rp <span id="summaryPrice"></span></p>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="text" id="whatsapp" placeholder="Nomor WhatsApp" />
+    <textarea id="catatan" placeholder="Catatan"></textarea>
+    <input type="file" id="bukti" onchange="previewBukti(event)" />
+    <img id="preview" class="hidden" width="200" />
+    <button onclick="submitOrder()">Kirim Pesanan</button>
+  </div>
+
+  <div id="success" class="hidden">
+    <h2>Berhasil!</h2>
+    <p>Pesanan Anda dikirim dan menunggu konfirmasi admin.</p>
+    <button onclick="resetForm()">Kembali</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
